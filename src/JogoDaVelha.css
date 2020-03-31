@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: #243243;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*Estilizar o título (Jogo da Velha)*/
+.titulo {
+  text-align: center;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  text-shadow: 0px 2px 7px black;
+}
+/*Estilizar o tabuleiro*/
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 160px); /*MODIFICAR O TAMANHO DPS*/
+  grid-template-rows: repeat(3, 110px); /*MODIFICAR O TAMANHO DPS*/
+  gap: 1rem; /*espaço entre as células*/
+}
+/*Estilizar fim de jogo*/
+.tabuleiro.jogo-finalizado {
+  opacity: 0.7;
+}
+/*Estilizar as células*/
+.celula {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #405978;
+  border-radius: 5px;
+  font-size: 48pt; /*mudar fonte depois*/
+  font-weight: bold;
+  cursor: pointer;
+}
+/*Estilizar celulas para o 'O'*/
+.celula.O {
+  color: #47f547;
+  text-shadow: #2f2849 3px 5px 2px;
+}
+/*Estilizar celulas para o 'X'*/
+.celula.X {
+  color: #00ffe5;
+  text-shadow: #2f2849 3px 5px 2px;
+}
+/*Retirar cursor pointer para célula já usada*/
+.celula.O, .celula.X, .jogo-finalizado .celula {
+  cursor: not-allowed;
+}
+/*Estilizar célula vazia/disponível*/
+.celula:not(.O):not(.X):hover {
+  box-shadow: 0px 8px 15px 4px rgba(0,0,0,0.50);
+}
+/*Estilizar mostrar vez do jogador*/
+.mostrarVez {
+  color: white;
+  text-align: center;
+  margin: 2rem;
+  font-size: 16pt;
+}
+
+.mostrarVez span.O {
+  color: #47f547;
+}
+
+.mostrarVez span.X {
+  color: #00ffe5;
+}
+/*Estilizar rodapé*/
+footer {
+  text-align: center;
+}
+/*Estilizar mensagem de vencedor*/
+.mensagem-vencedor {
+  color: white;
+  margin: 2rem;
+  font-size: 16pt;
+}
+/*Colocar cor no texto do vencedor*/
+.mensagem-vencedor span.O {
+  color: #47f547;
+}
+
+  color: #00ffe5;
+}
+
+/*Estilizar botão*/
+button {
+  padding: 13px 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #47f547;
+  color: white;
+  font-weight: bold;
+  font-size: 10pt;  
+}
+
+button:hover {
+  box-shadow: 0px 4px 15px 2px rgba(0,0,0,0.30);
+  background-color: #37ca3e;
+  cursor: pointer;
+}
+/*Estilizar tempo*/
+.tempo {
+  color: white;
+  font-size: 13pt;
+  margin-bottom: 0.4rem;
+  text-shadow: 0px 3px 6px #00000067;
+}
+/*Estilizar placar parte de cima*/
+.placar {
+  background-color: transparent;
+  margin: 11rem 11rem 0rem;
+  padding: 0rem;
+  border-radius: 7px;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0px 3px 6px #00000080 ;
+
+  word-spacing: 25px;
+  margin-bottom: 0.4rem;
+  display: block;
+  color: white;
+}
+
+.placar span.O {
+  color: #47f547;
+}
+.placar span.X {
+  color: #00ffe5;
+}
+/*Estilizar placar parte de baixo*/
+.pontosPlacar{
+  background-color: transparent;
+  margin: 0rem 11rem 0rem;
+  margin-right: 177px;
+  padding: 0rem;
+  border-radius: 7px;
+  text-align: right;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0px 3px 6px #00000080;
+
+  word-spacing: 40px;
+  color: #fff; 
+  grid-auto-flow: column;
+}
+
+.pontosO {
+  display: inline;
+  background-color: transparent;
+  padding: 0px 25px 0px 15px;
+  color: white;
+}
+
+.pontosX {
+  background-color: transparent;
+  padding: 0px 15px 0px 25px;
+  display: inline;
+  color: white;
+}
+
+.pontosE {
+  background-color: transparent;
+  padding: 0px 20px 0px 20px;
+  display: inline;
+  color: white;
+}
+/*
+.totalDePartidas {
+  color: white;
+  text-align: right;
+  flex:
+}
+*/
+
+.menu{ display:flex; 
+  flex-wrap: wrap; 
+  }
+  .menu > div{ background-color:#09F; 
+  padding:20px; 
+  cursor:pointer;
+  margin-left:10px;
+  border-radius:30%;
+  font-weight:bold;
+  box-shadow:0 3px 3px rgba(0,0,0,.4);
+  }
+  .menu > div:hover{ background-color:#0CC;
+  transform:scale(1.1); 
+  box-sizing:border-box; 
+  box-shadow: 1px 1px 1px 2px #333333;}
